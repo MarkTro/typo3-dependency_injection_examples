@@ -14,10 +14,11 @@ class TestService
     //-----------------------------------------------------------------------
     // DI via Constructor
     //
-    // Beste DI-Variante
-    // - Funktioniert auch in anderen PHP Frameworks
-    // - Sind viele DIs in einem Konstruktor vorhanden, deutet das auf eine
-    //   evtl. schlechte System-Architektur hin.
+    // Best DI-Variant
+    // - Works also in other PHP Frameworks
+    // - Good overview of how many injections you need. If you have a
+    //   lot of them it might be a hint for refactoring of the system
+    //   architecture.
     //-----------------------------------------------------------------------
 
     /**
@@ -35,8 +36,8 @@ class TestService
     //-----------------------------------------------------------------------
     // DI via inject function
     //
-    // Hat den Vorteil, dass man in der Variable das Ergebnis einer Methode
-    // speichern kann, z.B.:
+    // Has the benefit that you can store the result of a method of the
+    // service, z.B.:
     //   $this->service = $exampleService->getSettings();
     //-----------------------------------------------------------------------
 
@@ -55,9 +56,9 @@ class TestService
     //-----------------------------------------------------------------------
     // DI via Annotation
     //
-    // - Möglichst nicht nutzen:
-    //    - kann bei Tests nicht gemockt werden
-    //    - benötigte zusätzliches Parsen der Annotation
+    // Don't use it:
+    // - It can't be mocked in tests
+    // - Needs additional parsing of the annotation
     //-----------------------------------------------------------------------
 
     /**
